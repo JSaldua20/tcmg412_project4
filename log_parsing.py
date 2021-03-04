@@ -188,6 +188,27 @@ print()
 print()
 dailyFile.close()
 
+##Julia part 3 and 4 
+statusFile = open(FilePath, "r")
+totalRequests = 0.0
+unsuccesfulRequest = 0.0
+redirectedRequest = 0.0
+
+for line in statusFile:
+   if(len(line)>=56):
+       totalRequests+=1.0
+       data=line.split()
+       if data[-2][0]=="4":
+           unsuccesfulRequest+=1.0
+       if data[-2][0]=="3":
+           redirectedRequest+=1.0
+
+percentageFailed = (unsuccesfulRequest//totalRequest) * 100.0
+percentageRedirected = (redirectedRequest//totalRequest) * 100.0
+print(percentageFailed, "% of requests failed")
+print(percentageRedirected, "% of requests were redirected")
+statusFile.close()
+
 #Jonathan Part 5 and 6
 # Read file directly into a Counter
 with open(FilePath) as f:
