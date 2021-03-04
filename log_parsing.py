@@ -27,19 +27,55 @@ cnts.most_common()[-3:]
 
 #Tanner splitting file into more files
 input = open(FilePath, "r")
-outputJ = open("JanuaryLog.txt", "w")
-outputF = open("FebuaryLog.txt", "w")
-outputM = open("MarchLog.txt", "w")
+outputJan = open("JanuaryLog.txt", "w")
+outputFeb = open("FebuaryLog.txt", "w")
+outputMar = open("MarchLog.txt", "w")
+outputApr = open("AprilLog.txt", "w")
+outputMay = open("MayLog.txt", "w")
+outputJun = open("JuneLog.txt", "w")
+outputJul = open("JulyLog.txt", "w")
+outputAug = open("AugustLog.txt", "w")
+outputSep = open("SeptemberLog.txt", "w")
+outputOct = open("OctoberLog.txt", "w")
+outputNov = open("NovemberLog.txt", "w")
+outputDec = open("DecemberLog.txt", "w")
 
 for line in input:
 	if "/Jan/" in line:
-		outputJ.write(line)
+		outputJan.write(line)
 	elif "/Feb/" in line:
-		outputF.write(line)
+		outputFeb.write(line)
 	elif "/Mar/" in line:
-		outputM.write(line)
+		outputMar.write(line)
+	elif "/Apr/" in line:
+		outputApr.write(line)
+	elif "/May/" in line:
+		outputMay.write(line)
+	elif "/Jun/" in line:
+		outputJun.write(line)
+	elif "/Jul/" in line:
+		outputJul.write(line)
+	elif "/Aug/" in line:
+		outputAug.write(line)
+	elif "/Sep/" in line:
+		outputSep.write(line)
+	elif "/Oct/" in line:
+		outputOct.write(line)
+	elif "/Nov/" in line:
+		outputNov.write(line)
+	elif "/Dec/" in line:
+		outputDec.write(line)
 
 input.close()
-outputJ.close()
-outputF.close()
-outputM.close()
+outputJan.close()
+outputFeb.close()
+outputMar.close()
+outputApr.close()
+outputMay.close()
+outputJun.close()
+outputJul.close()
+outputAug.close()
+outputSep.close()
+outputOct.close()
+outputNov.close()
+outputDec.close()
