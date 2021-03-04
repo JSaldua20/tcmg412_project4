@@ -2,7 +2,7 @@ import os
 import re
 import datetime
 import urllib.request
-from collections import Counter
+import collections
 
 ##Start the file by making sure the file is available
 FilePath = './http_access_log.txt'
@@ -209,15 +209,26 @@ print(percentageRedirected, "% of requests were redirected")
 statusFile.close()
 
 #Jonathan Part 5 and 6
-# Read file directly into a Counter
-with open(FilePath) as f:
-    cnts = Counter(l.strip() for l in f)
 
-# Display 3 most common lines
-cnts.most_common(3)
+logfile = open(FilePath, "r")
 
-# Display 3 least common lines
-cnts.most_common()[-3:]
+clean_log=[]
+
+for line in logfile:
+    try:
+        # copy the URLS to an empty list.
+        # We get the part between GET and HTTP
+        clean_log.append(line[line.index("GET")+4:line.index("HTTP")])
+    except:
+        pass
+
+counter = collections.Counter(clean_log)
+
+# get the Top 3 most popular URLs
+for count in counter.most_common(3):
+    print(str(count[1]) + "	" + str(count[0]))
+
+logfile.close()
 
 #Tanner splitting file into more files
 input = open(FilePath, "r")
