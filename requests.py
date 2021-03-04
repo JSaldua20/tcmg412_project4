@@ -1,8 +1,8 @@
 #Pulls the log file from the network
 
 import requests
-URL = "https://s3.amazonaws.com/tcmg476/http_access_log"
-R = requests.get(file_url, stream = True)
+url = "https://s3.amazonaws.com/tcmg476/http_access_log"
+r = requests.get(file_url, stream = True)
 with open("python.txt","wb") as textfile:
    for chunk in r.iter_content(chunk_size=1024):
    
