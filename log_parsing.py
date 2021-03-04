@@ -206,6 +206,8 @@ percentageFailed = (unsuccesfulRequest/totalRequest) * 100.0
 percentageRedirected = (redirectedRequest/totalRequest) * 100.0
 print(percentageFailed, "% of requests failed")
 print(percentageRedirected, "% of requests were redirected")
+print()
+print()
 statusFile.close()
 
 #Jonathan Part 5 and 6
@@ -225,8 +227,10 @@ for line in logfile:
 counter = collections.Counter(clean_log)
 
 # get the Top 3 most popular URLs
+print("These are the 3 most common files requested")
+print()
 for count in counter.most_common(3):
-    print(str(count[1]) + "	" + str(count[0]))
+    print(str(count[0]) + " was requested " + str(count[1]) + " times")
 
 logfile.close()
 
