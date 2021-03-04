@@ -29,13 +29,17 @@ cnts.most_common()[-3:]
 input = open(FilePath, "r")
 outputJ = open("JanuaryLog.txt", "w")
 outputF = open("FebuaryLog.txt", "w")
+outputM = open("MarchLog.txt", "w")
 
 for line in input:
 	if "/Jan/" in line:
 		outputJ.write(line)
 	elif "/Feb/" in line:
 		outputF.write(line)
+	elif "/Mar/" in line:
+		outputM.write(line)
 
 input.close()
 outputJ.close()
 outputF.close()
+outputM.close()
