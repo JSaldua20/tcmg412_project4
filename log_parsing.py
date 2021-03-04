@@ -188,7 +188,7 @@ print()
 print()
 dailyFile.close()
 
-##Julia part 3 and 4 
+#Julia Part 3 and 4 
 statusFile = open(FilePath, "r")
 totalRequest = 0.0
 unsuccesfulRequest = 0.0
