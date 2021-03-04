@@ -196,10 +196,9 @@ redirectedRequest = 0.0
 
 for line in statusFile:
 	totalRequest+=1.0
-	data=line.split()
-	if data[-2][0]=="4":
+	if " 404 " in line:
 		unsuccesfulRequest+=1.0
-	if data[-2][0]=="3":
+	if " 304 " in line:
 		redirectedRequest+=1.0
 
 percentageFailed = (unsuccesfulRequest//totalRequest) * 100.0
