@@ -190,13 +190,13 @@ dailyFile.close()
 
 ##Julia part 3 and 4 
 statusFile = open(FilePath, "r")
-totalRequests = 0.0
+totalRequest = 0.0
 unsuccesfulRequest = 0.0
 redirectedRequest = 0.0
 
 for line in statusFile:
    if(len(line)>=56):
-       totalRequests+=1.0
+       totalRequest+=1.0
        data=line.split()
        if data[-2][0]=="4":
            unsuccesfulRequest+=1.0
