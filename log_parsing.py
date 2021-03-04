@@ -231,6 +231,7 @@ print("These are the 3 most common files requested")
 print()
 for count in counter.most_common(3):
     print(str(count[0]) + " was requested " + str(count[1]) + " times")
+print()
 print("These are the 3 least common files requested")
 print()
 for count in counter.most_common()[:-3-1:-1]:
